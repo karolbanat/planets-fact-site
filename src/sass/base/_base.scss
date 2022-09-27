@@ -1,0 +1,15 @@
+body {
+	font-size: var(--fz-300);
+	font-family: var(--ff-primary);
+	font-weight: var(--fw-400);
+	color: var(--clr-neutral-100);
+	background-color: var(--clr-neutral-700);
+	background-image: url('../assets/background-stars.svg');
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--ff-secondary);
+	font-weight: var(--fw-500);
+}

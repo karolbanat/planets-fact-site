@@ -10,8 +10,10 @@
 	}
 
 	// font families
+	--ff-primary: 'League Spartan', sans-serif;
+	--ff-secondary: 'Antonio', sans-serif;
 
-	// font wieghts
+	// font weights
 	@each $font-weight, $value in variables.$font-weights {
 		--fw-#{$font-weight}: #{$value};
 	}
@@ -31,15 +33,10 @@
 		}
 	}
 
-	// border radius
-	@each $radius, $value in variables.$border-radius {
-		--borr-#{$radius}: #{$value};
-	}
-
 	// spacings
-	@each $unit, $sizes in variables.$spacings {
-		@each $size, $value in $sizes {
-			--spacing-#{$unit}-#{$size}: #{$value};
-		}
-	}
+	// @each $unit, $sizes in variables.$spacings {
+	// 	@each $size, $value in $sizes {
+	// 		--spacing-#{$unit}-#{$size}: #{$value};
+	// 	}
+	// }
 }
