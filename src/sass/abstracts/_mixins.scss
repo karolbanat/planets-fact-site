@@ -15,3 +15,30 @@
 		@content;
 	}
 }
+
+@mixin planet-colors {
+	&[data-planet='mercury'] {
+		--planet-color: var(--clr-accent-mercury);
+	}
+	&[data-planet='venus'] {
+		--planet-color: var(--clr-accent-venus);
+	}
+	&[data-planet='earth'] {
+		--planet-color: var(--clr-accent-earth);
+	}
+	&[data-planet='mars'] {
+		--planet-color: var(--clr-accent-mars);
+	}
+	&[data-planet='jupiter'] {
+		--planet-color: var(--clr-accent-jupiter);
+	}
+	&[data-planet='saturn'] {
+		--planet-color: var(--clr-accent-saturn);
+	}
+	&[data-planet='uranus'] {
+		--planet-color: var(--clr-accent-uranus);
+	}
+	&[data-planet='neptune'] {
+		--planet-color: var(--clr-accent-neptune);
+	}
+}

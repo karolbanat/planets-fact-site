@@ -1,0 +1,75 @@
+@use '../abstracts/mixins' as mxn;
+
+.control-button {
+	padding: 2rem;
+	font-size: var(--fz-200);
+	font-weight: var(--fw-700);
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	line-height: 1;
+	color: var(--clr-neutral-150);
+	background: none;
+	border: none;
+	border-bottom: 1px solid var(--clr-neutral-120);
+	cursor: pointer;
+	transition: color 0.35s ease, background-color 0.35s ease;
+
+	&:hover,
+	&:focus {
+		color: var(--clr-neutral-100);
+	}
+
+	&.active {
+		color: var(--clr-neutral-100);
+	}
+
+	& > [data-hidden='small'] {
+		display: none;
+		@include mxn.mq(medium) {
+			display: inline-block;
+		}
+	}
+
+	/* appearance for smaller devices */
+	@include mxn.max-mq(medium) {
+		position: relative;
+		/* line at the bottom of the button for smaller screens  */
+		&::after {
+			content: '';
+			display: none;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			translate: -50%;
+			width: 50%;
+			height: 4px;
+			background-color: var(--planet-color, var(--clr-neutral-100));
+		}
+
+		&.active {
+			&::after {
+				display: block;
+			}
+		}
+	}
+	/* appearance for larger devices */
+	@include mxn.mq(medium) {
+		color: var(--clr-neutral-100);
+		border: 1px solid var(--clr-neutral-120);
+		counter-increment: count 1;
+
+		&::before {
+			content: '0' counter(count);
+			margin-right: 1.6rem;
+			color: var(--clr-neutral-150);
+		}
+
+		&:is(:hover, &:focus):not(.active) {
+			background-color: var(--clr-neutral-320);
+		}
+
+		&.active {
+			background-color: var(--planet-color);
+		}
+	}
+}

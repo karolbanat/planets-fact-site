@@ -1,0 +1,50 @@
+@use '../abstracts/mixins' as mxn;
+
+.planet-facts {
+	--internal-padding-inline: 2.4rem;
+	display: grid;
+	@include mxn.planet-colors; // colors for planets
+	@include mxn.mq(medium) {
+		--internal-padding-inline: 4rem;
+	}
+
+	&__image {
+		place-self: center;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		padding-inline: var(--internal-padding-inline);
+		@include mxn.mq(medium) {
+			text-align: left;
+		}
+
+		p {
+			line-height: 2;
+		}
+	}
+
+	&__facts {
+		padding-inline: var(--internal-padding-inline);
+	}
+
+	&__heading {
+		margin-bottom: 1.6rem;
+		font-size: var(--fz-700);
+		text-transform: uppercase;
+		line-height: 1;
+		@include mxn.mq(medium) {
+			margin-bottom: 2.4rem;
+		}
+	}
+
+	&__source {
+		margin-top: 3.2rem;
+		font-size: var(--fz-400);
+		@include mxn.mq(medium) {
+			margin-top: 2.4rem;
+		}
+	}
+}

@@ -1,0 +1,16 @@
+@use '../abstracts/mixins' as mxn;
+
+.facts-list {
+	--gap: 0.8rem;
+	display: grid;
+	gap: var(--gap);
+	@include mxn.mq(medium) {
+		--gap: 1rem;
+		grid-auto-flow: column;
+		grid-auto-columns: 1fr;
+	}
+	@include mxn.mq(large) {
+		--gap: 3rem;
+		grid-auto-flow: column;
+	}
+}

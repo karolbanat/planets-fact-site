@@ -46,7 +46,8 @@
   <main>
     <div class="container">
       <section class="planet-facts" data-planet="mercury">
-        <img id="planet-image" src="./dist/assets/planets/mercury/planet-mercury.svg" alt="">
+        <img src="./dist/assets/planets/mercury/planet-mercury.svg" alt="" id="planet-image"
+             class="planet-facts__image">
         <header class="planet-facts__content">
           <h2 id="planet-heading" class="planet-facts__heading">Mercury</h2>
           <p id="description">Mercury is the smallest planet in the Solar System and the closest
@@ -54,13 +55,16 @@
             shortest of all the Sun's planets. Mercury is one of four terrestrial
             planets in the Solar System, and is a rocky body like Earth.</p>
           <p class="planet-facts__source">Source : <a id="source-link"
-               href="https://en.wikipedia.org/wiki/Mercury_(planet)" class="source-link">Wikipedia <img
+               href="https://en.wikipedia.org/wiki/Mercury_(planet)" class="planet-facts__source source-link">Wikipedia
+              <img
                    src="./dist/assets/icons/icon-source.svg" alt=""></a></p>
         </header>
         <div role="group" class="control-buttons">
-          <button data-controls="overview" class="control-button">Overview</button>
-          <button data-controls="structure" class="control-button">Internal Structure</button>
-          <button data-controls="geology" class="control-button">Surface Geology</button>
+          <button data-controls="overview" class="control-button active">Overview</button>
+          <button data-controls="structure" class="control-button"><span data-hidden="small">Internal</span>
+            Structure</button>
+          <button data-controls="geology" class="control-button"><span data-hidden="small">Surface</span>
+            Geology</button>
         </div>
         <section aria-label="Planet data" class="planet-facts__facts">
           <ul class="facts-list">
