@@ -20,7 +20,12 @@
   <header>
     <nav class="primary-navigation">
       <h1 class="logo">The Planets</h1>
-      <button aria-label="Menu toggle" aria-controls="primary-nav" id="primary-nav-toggle" class="toggle-button">
+      <button aria-label="Menu toggle"
+              aria-expanded="false"
+              aria-controls="primary-nav"
+              data-controls='#primary-nav'
+              id="primary-nav-toggle"
+              class="toggle-button primary-navigation__toggle">
         <img src="./dist/assets/icons/icon-hamburger.svg" alt="">
       </button>
       <div id="primary-nav" class="primary-navigation__nav">
