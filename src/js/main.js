@@ -4,6 +4,7 @@ const primaryNav = document.querySelector('#primary-nav');
 const planetLinks = document.querySelectorAll('a[data-planet]');
 const planetFactsBody = document.querySelector('.planet-facts');
 const planetImage = planetFactsBody.querySelector('#planet-image');
+const planetGeologyImage = planetFactsBody.querySelector('#geology-image');
 const planetHeading = planetFactsBody.querySelector('#planet-heading');
 const planetContent = planetFactsBody.querySelector('#planet-description');
 const planetSourceLink = planetFactsBody.querySelector('#source-link');
@@ -23,6 +24,7 @@ const loadPlanetData = async (planet = 'mercury') => {
 		currentPlanet = await getPlanetData(planet);
 		planetFactsBody.dataset.planet = planet;
 		loadPlanetImage();
+		loadGeologyImage();
 		loadPlanetHeading();
 		loadContent();
 		loadFactsData();
@@ -44,7 +46,17 @@ const getPlanetData = async (planet = 'mercury') => {
 const loadPlanetImage = (topic = 'overview') => {
 	const imageSrc = topic === 'structure' ? currentPlanet.images.internal : currentPlanet.images.planet;
 	planetImage.src = imageSrc;
+	toggleGeologyImageView(topic);
 	animateElement(planetImage, ANIMATION_CLASSES.fadeLeft);
+};
+
+const toggleGeologyImageView = (topic) => {
+	const shouldShow = topic === 'geology';
+	planetGeologyImage.classList.toggle('visible', shouldShow);
+};
+
+const loadGeologyImage = () => {
+	planetGeologyImage.src = currentPlanet.images.geology;
 };
 
 const loadPlanetHeading = () => {
@@ -71,6 +83,7 @@ const handleControlButton = (e) => {
 	const topic = e.target.dataset.controls;
 	loadContent(topic);
 	loadPlanetImage(topic);
+	toggleGeologyImageView(topic);
 	deselectControlButtons();
 	e.target.classList.add('active');
 };

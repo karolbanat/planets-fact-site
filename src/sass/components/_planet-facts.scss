@@ -14,6 +14,8 @@
 
 	&__image-container {
 		--height: 25.6rem;
+		position: relative;
+		isolation: isolate;
 		display: grid;
 		place-items: center;
 		height: var(--height);
@@ -25,6 +27,18 @@
 		@include mxn.mq(large) {
 			--height: 66rem;
 			aspect-ratio: unset;
+		}
+	}
+
+	&__geology-image {
+		display: none;
+		position: absolute;
+		top: 62.5%;
+		left: 50%;
+		translate: -50%;
+		width: clamp(10rem, 10vw, 16.3rem);
+		&.visible {
+			display: block;
 		}
 	}
 
