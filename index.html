@@ -45,10 +45,15 @@
 
   <main>
     <div class="container">
-      <section class="planet-facts" data-planet="mercury">
-        <img src="./dist/assets/planets/mercury/planet-mercury.svg" alt="" id="planet-image"
-             class="planet-facts__image">
-        <header class="planet-facts__content">
+      <section class="planet-facts | planet-facts-grid" data-planet="mercury">
+        <div data-area="image" class="planet-facts__image-container">
+          <img src="./dist/assets/planets/mercury/planet-mercury.svg"
+               alt=""
+               id="planet-image"
+               class="planet-facts__image">
+        </div>
+
+        <header data-area="content" class="planet-facts__content">
           <h2 id="planet-heading" class="planet-facts__heading">Mercury</h2>
           <p id="description">Mercury is the smallest planet in the Solar System and the closest
             to the Sun. Its orbit around the Sun takes 87.97 Earth days, the
@@ -59,14 +64,16 @@
               <img
                    src="./dist/assets/icons/icon-source.svg" alt=""></a></p>
         </header>
-        <div role="group" class="control-buttons">
+
+        <div role="group" data-area="controls" class="control-buttons">
           <button data-controls="overview" class="control-button active">Overview</button>
           <button data-controls="structure" class="control-button"><span data-hidden="small">Internal</span>
             Structure</button>
           <button data-controls="geology" class="control-button"><span data-hidden="small">Surface</span>
             Geology</button>
         </div>
-        <section aria-label="Planet data" class="planet-facts__facts">
+
+        <section aria-label="Planet data" data-area="facts" class="planet-facts__facts">
           <ul class="facts-list">
             <li class="fact">
               <p class="fact__label">Rotation Time</p>

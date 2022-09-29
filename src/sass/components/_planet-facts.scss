@@ -2,14 +2,35 @@
 
 .planet-facts {
 	--internal-padding-inline: 2.4rem;
-	display: grid;
+	padding-bottom: 3.6rem;
 	@include mxn.planet-colors; // colors for planets
 	@include mxn.mq(medium) {
-		--internal-padding-inline: 4rem;
+		--internal-padding-inline: 0;
+		padding-block: 3.6rem;
+	}
+	@include mxn.mq(large) {
+		padding-block: 7rem;
+	}
+
+	&__image-container {
+		--height: 25.6rem;
+		display: grid;
+		place-items: center;
+		height: var(--height);
+		max-height: 100%;
+		aspect-ratio: 1;
+		@include mxn.mq(medium) {
+			--height: 40rem;
+		}
+		@include mxn.mq(large) {
+			--height: 66rem;
+			aspect-ratio: unset;
+		}
 	}
 
 	&__image {
-		place-self: center;
+		max-height: 100%;
+		width: auto;
 	}
 
 	&__content {

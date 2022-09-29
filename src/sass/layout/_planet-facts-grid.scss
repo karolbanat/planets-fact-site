@@ -1,0 +1,57 @@
+@use '../abstracts/mixins' as mxn;
+
+.planet-facts-grid {
+	display: grid;
+	gap: 2.4rem;
+	grid-template-areas:
+		'controls'
+		'image'
+		'content'
+		'facts';
+
+	@include mxn.mq(medium) {
+		gap: 3.4rem 6rem;
+		grid-template-areas:
+			'image image'
+			'content controls'
+			'facts facts';
+		grid-auto-columns: 1fr;
+	}
+
+	@include mxn.mq(large) {
+		grid-template-areas:
+			'image content'
+			'image controls'
+			'facts facts';
+		grid-auto-columns: 0.618fr 0.382fr;
+	}
+
+	& [data-area='image'] {
+		grid-area: image;
+		place-self: center;
+	}
+
+	& [data-area='content'] {
+		grid-area: content;
+		@include mxn.mq(medium) {
+			align-self: center;
+		}
+		@include mxn.mq(large) {
+			align-self: end;
+		}
+	}
+
+	& [data-area='controls'] {
+		grid-area: controls;
+		@include mxn.mq(medium) {
+			align-self: center;
+		}
+		@include mxn.mq(large) {
+			align-self: start;
+		}
+	}
+
+	& [data-area='facts'] {
+		grid-area: facts;
+	}
+}

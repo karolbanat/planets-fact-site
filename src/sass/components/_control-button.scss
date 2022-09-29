@@ -54,6 +54,8 @@
 	}
 	/* appearance for larger devices */
 	@include mxn.mq(medium) {
+		display: inline-flex;
+		padding: 2rem 2.8rem;
 		color: var(--clr-neutral-100);
 		border: 1px solid var(--clr-neutral-120);
 		counter-increment: count 1;

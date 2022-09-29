@@ -1,5 +1,11 @@
+@use '../abstracts/mixins' as mxn;
+
 .container {
 	--max-width: 111rem;
+	--padding-inline: 0;
 	margin-inline: auto;
-	width: min(100%, var(--max-width));
+	width: min(100% - 2 * var(--padding-inline), var(--max-width));
+	@include mxn.mq(medium) {
+		--padding-inline: 4rem;
+	}
 }
