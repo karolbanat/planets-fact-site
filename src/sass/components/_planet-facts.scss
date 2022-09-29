@@ -58,6 +58,11 @@
 
 		p {
 			line-height: 2;
+			max-width: 52ch;
+			margin-inline: auto;
+			@include mxn.mq(medium) {
+				margin-inline: unset;
+			}
 		}
 	}
 
