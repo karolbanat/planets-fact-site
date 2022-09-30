@@ -19,10 +19,7 @@
 	}
 
 	&:hover,
-	&:focus {
-		color: var(--clr-neutral-100);
-	}
-
+	&:focus,
 	&.active {
 		color: var(--clr-neutral-100);
 	}
@@ -31,6 +28,7 @@
 		display: none;
 		@include mxn.mq(medium) {
 			display: inline-block;
+			margin-inline-end: 0.25em;
 		}
 	}
 

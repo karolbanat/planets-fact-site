@@ -1,16 +1,10 @@
 @keyframes fade-left {
 	from {
-		opacity: 0;
 		translate: -25%;
 	}
 	to {
-		opacity: 1;
 		translate: 0;
 	}
-}
-
-.animation-fade-left {
-	animation: fade-left 1.25s ease;
 }
 
 @keyframes fade-in {
@@ -20,6 +14,10 @@
 	to {
 		opacity: 1;
 	}
+}
+
+.animation-fade-left {
+	animation: fade-left 1.25s ease, fade-in 1.25s ease;
 }
 
 .animation-fade-in {

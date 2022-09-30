@@ -2,7 +2,7 @@
 
 .planet-facts {
 	--internal-padding-inline: 2.4rem;
-	padding-bottom: 3.6rem;
+	padding-block-end: 3.6rem;
 	@include mxn.planet-colors; // colors for planets
 	@include mxn.planet-image-max-sizes;
 	@include mxn.mq(medium) {
@@ -47,7 +47,7 @@
 	&__image {
 		max-height: 100%;
 		width: auto;
-		max-width: var(--planet-max-size);
+		max-width: min(100%, var(--planet-max-size));
 	}
 
 	&__content {
@@ -56,7 +56,7 @@
 		text-align: center;
 		padding-inline: var(--internal-padding-inline);
 		@include mxn.mq(medium) {
-			text-align: left;
+			text-align: start;
 		}
 
 		p {
@@ -74,20 +74,20 @@
 	}
 
 	&__heading {
-		margin-bottom: 1.6rem;
+		margin-block-end: 1.6rem;
 		font-size: var(--fz-700);
 		text-transform: uppercase;
 		line-height: 1;
 		@include mxn.mq(medium) {
-			margin-bottom: 2.4rem;
+			margin-block-end: 2.4rem;
 		}
 	}
 
 	&__source {
-		margin-top: 3.2rem;
+		margin-block-start: 3.2rem;
 		font-size: var(--fz-400);
 		@include mxn.mq(medium) {
-			margin-top: 2.4rem;
+			margin-block-start: 2.4rem;
 		}
 	}
 }

@@ -32,11 +32,4 @@
 			}
 		}
 	}
-
-	// spacings
-	// @each $unit, $sizes in variables.$spacings {
-	// 	@each $size, $value in $sizes {
-	// 		--spacing-#{$unit}-#{$size}: #{$value};
-	// 	}
-	// }
 }
