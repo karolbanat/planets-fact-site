@@ -4,6 +4,7 @@
 	--internal-padding-inline: 2.4rem;
 	padding-bottom: 3.6rem;
 	@include mxn.planet-colors; // colors for planets
+	@include mxn.planet-image-max-sizes;
 	@include mxn.mq(medium) {
 		--internal-padding-inline: 0;
 		padding-block: 3.6rem;
@@ -27,6 +28,7 @@
 		@include mxn.mq(large) {
 			--height: 66rem;
 			aspect-ratio: unset;
+			width: 100%;
 		}
 	}
 
@@ -45,6 +47,7 @@
 	&__image {
 		max-height: 100%;
 		width: auto;
+		max-width: var(--planet-max-size);
 	}
 
 	&__content {
