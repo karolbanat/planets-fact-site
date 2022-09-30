@@ -95,7 +95,8 @@
 			transition: opacity 0.35s ease;
 
 			&:hover,
-			&:focus {
+			&:focus,
+			&.active {
 				opacity: 1;
 
 				&::before {

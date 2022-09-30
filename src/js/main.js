@@ -105,7 +105,13 @@ const handleNavToggle = () => {
 const handlePlanetLink = (e) => {
 	const planet = e.target.dataset.planet;
 	loadPlanetData(planet);
+	handleActiveLink(e.target);
 	handleNavToggle(); // closing nav after clicking link
+};
+
+const handleActiveLink = (activeLink) => {
+	planetLinks.forEach((link) => link.classList.remove('active'));
+	activeLink.classList.add('active');
 };
 
 /* animation helper */
