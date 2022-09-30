@@ -65,6 +65,7 @@
 			margin-inline: auto;
 			@include mxn.mq(medium) {
 				margin-inline: unset;
+				line-height: 1.75;
 			}
 		}
 	}
@@ -86,6 +87,7 @@
 	&__source {
 		margin-block-start: 3.2rem;
 		font-size: var(--fz-400);
+		letter-spacing: 1px;
 		@include mxn.mq(medium) {
 			margin-block-start: 2.4rem;
 		}
